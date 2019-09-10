@@ -1,0 +1,32 @@
+.pri-image-picker {
+    width: 100%;
+    height: 264px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #f8f8f8;
+    .view-mode-no-image {
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        .no-image-icon {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+            font-size: 40pt;
+
+            i {
+                color: #b8b8b8;
+            }
+        }
+    }
+}
+
+.form-control-label {
+    color: #808080;
+    margin-bottom: 0;
+    font-weight: 400 !important;
+}

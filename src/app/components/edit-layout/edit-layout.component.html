@@ -1,0 +1,33 @@
+<h2 style="margin: 15px">{{layoutDefinition.title}}</h2>
+<div *ngFor="let row of layoutDefinition.rows; let i = index" class="row">
+  <div *ngFor="let column of row.columns; let j = index" [ngClass]="column.size">
+    <div 
+       id="{{i}}-{{j}}"
+       cdkDropList
+      #test="cdkDropList"
+      (cdkDropListDropped)="drop($event, column.fields)"
+      [cdkDropListConnectedTo]="getValidLists(row, i, column, j)"
+      class="row">
+     
+        <div *ngFor="let field of column.fields" cdkDrag [ngClass]="field.size" >
+            <app-dynamic-component [field]="field" ></app-dynamic-component>
+        </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="row">
+
+<textarea class="col-md-12" #divinput>
+
+    {{ layoutDefinition | json }}</textarea>
+</div>
+<div class="row">
+  <div class="col-md-2">
+
+  <button (click)="print(); copyInputMessage(divinput);">Copy View Definition</button></div>
+  <textarea class="col-md-8" #divinput>
+
+     {{ printViewDefinition | json }}</textarea>
+</div>
