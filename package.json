@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "github:angular/animations-builds",
     "@angular/cdk": "github:angular/cdk-builds",
